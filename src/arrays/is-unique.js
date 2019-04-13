@@ -86,6 +86,11 @@ const isUniqueCharacterSetLinear = str => {
 // as soon as we find equivalent neighbors.
 const isUniqueCharacterSetLinearLog = str => {
   // first, we'll create a character code array O(N)
+
+  //   XXX this uses extra space in javascript since the input is an immutable str. 
+  //   if the input was a mutable array of characters ["a", "b", "c", ...]
+  //   then we could modify the input and avoid using extra linear space.
+
   let codeArray = [], n = str.length, neighbor, cur;
   for (let i = 0; i < str.length; i++)
     codeArray.push(str.charCodeAt(i));

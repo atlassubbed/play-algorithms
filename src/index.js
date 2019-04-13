@@ -1,4 +1,5 @@
 module.exports = {
   ...require("./arrays/is-unique"),
-  ...require("./arrays/check-permutations")
+  ...require("./arrays/check-permutations"),
+  ...require("./arrays/urlify")
 }

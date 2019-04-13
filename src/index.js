@@ -1,1 +1,3 @@
-console.log("Hello from play-algorithms!")
+module.exports = {
+  ...require("./arrays/is-unique"),
+}

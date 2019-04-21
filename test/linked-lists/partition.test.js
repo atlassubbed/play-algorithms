@@ -60,7 +60,7 @@ describe("partition", function(){
     })
     it("should partition if the first element is in the right partition", function(){
       const list = makeList();
-      const partitioned = partitionAround(list, 5);
+      const partitioned = partitionAround(list, 3);
       expect(partitioned).to.equal(list);
       expect(partitioned).to.eql({
         head: {
@@ -68,9 +68,9 @@ describe("partition", function(){
           next: {
             data: 2,
             next: {
-              data: 3,
+              data: 5,
               next: {
-                data: 5,
+                data: 3,
                 next: {
                   data: 8,
                   next: {

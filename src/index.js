@@ -1,13 +1,9 @@
-module.exports = {
-  ...require("./arrays/is-unique"),
-  ...require("./arrays/check-permutations"),
-  ...require("./arrays/urlify"),
-  ...require("./arrays/palindrome-permutation"),
-  ...require("./arrays/one-away"),
-  ...require("./arrays/string-compression"),
-  ...require("./arrays/rotate-matrix"),
-  ...require("./arrays/zero-matrix"),
-  ...require("./arrays/string-rotation"),
-  ...require("./linked-lists/remove-dupes"),
-  ...require("./linked-lists/return-kth-to-last")
-}
+const { readdirSync } = require("fs");
+const { join } = require("path");
+
+module.exports = [
+  join(__dirname, "arrays"),
+  join(__dirname, "linked-lists")
+].map(dir => readdirSync(dir).map(f => join(dir, f)))
+  .reduce((files, cur) => [...files, ...cur], [])
+  .reduce((module, file) => ({...module, ...require(file)}), {});

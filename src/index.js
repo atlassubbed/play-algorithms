@@ -5,5 +5,6 @@ module.exports = {
   ...require("./arrays/palindrome-permutation"),
   ...require("./arrays/one-away"),
   ...require("./arrays/string-compression"),
-  ...require("./arrays/rotate-matrix")
+  ...require("./arrays/rotate-matrix"),
+  ...require("./arrays/zero-matrix")
 }

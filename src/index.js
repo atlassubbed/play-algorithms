@@ -4,5 +4,6 @@ module.exports = {
   ...require("./arrays/urlify"),
   ...require("./arrays/palindrome-permutation"),
   ...require("./arrays/one-away"),
-  ...require("./arrays/string-compression")
+  ...require("./arrays/string-compression"),
+  ...require("./arrays/rotate-matrix")
 }

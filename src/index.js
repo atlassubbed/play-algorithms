@@ -7,5 +7,7 @@ module.exports = {
   ...require("./arrays/string-compression"),
   ...require("./arrays/rotate-matrix"),
   ...require("./arrays/zero-matrix"),
-  ...require("./arrays/string-rotation")
+  ...require("./arrays/string-rotation"),
+  ...require("./linked-lists/remove-dupes"),
+  ...require("./linked-lists/return-kth-to-last")
 }

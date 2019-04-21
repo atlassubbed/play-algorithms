@@ -2,7 +2,7 @@ const { describe, it } = require("mocha");
 const { expect } = require("chai");
 const { compressString } = require("../../src/index");
 
-describe("check-permuations", function(){
+describe("stirng-compression", function(){
   describe("linear solution", function(){
     it("should not compress an empty string", function(){
       expect(compressString("")).to.equal("");

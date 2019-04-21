@@ -6,5 +6,6 @@ module.exports = {
   ...require("./arrays/one-away"),
   ...require("./arrays/string-compression"),
   ...require("./arrays/rotate-matrix"),
-  ...require("./arrays/zero-matrix")
+  ...require("./arrays/zero-matrix"),
+  ...require("./arrays/string-rotation")
 }

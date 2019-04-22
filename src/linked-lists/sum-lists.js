@@ -33,4 +33,34 @@ const toList = (number, isForward=false) => {
 const reverseOrderSum = (l1, l2) => toList(toNum(l1) + toNum(l2));
 const forwardOrderSum = (l1, l2) => toList(toNum(l1, true) + toNum(l2, true), true);
 
-module.exports = { reverseOrderSum, forwardOrderSum };
+const reverseSumWithoutConverting = (l1, l2) => {
+  const result = {head: null};
+  let cur, p1 = l1.head, p2 = l2.head, carry = 0;
+  while(p1 || p2 || carry){
+    let data = Number((p1 ? p1.data : 0) + (p2 ? p2.data : 0) + carry);
+    carry = data > 9 ? (data-=10, 1) : 0;
+    const node = {data, next: null}
+    if (cur) cur = cur.next = node;
+    else cur = result.head = node;
+    if (p1) p1 = p1.next;
+    if (p2) p2 = p2.next;
+  }
+  return result;
+}
+
+// in this case, the first nodes aren't matching vector components
+// 9 -> 6 -> 6
+// 9 -> 3 -> 2 -> 7
+
+// we can convert it to:
+// 0 -> 9 -> 6 -> 6
+// 9 -> 3 -> 2 -> 7
+const forwardSumWithoutConverting = (l1, l2) => {
+  // then we can add the two nodes, store it in a new node
+  // if there's a carry, we subtract 10 and carry it over to the left this time
+  //   until the carry has been absorbed.
+}
+
+// TODO see if I can do this without converting between formats
+
+module.exports = { reverseOrderSum, forwardOrderSum, reverseSumWithoutConverting };

@@ -17,31 +17,7 @@
 //     a bunch of the same species come in at once
 //   in either case, using a linked list as our queue implementation will give us O(1) removal/insert
 
-// linked list
-class Queue {
-  constructor(){
-    this.head = null;
-    this.tail = null;
-  }
-  // pop from head
-  pop(){
-    const head = this.head;
-    if (!head) return null;
-    if (!(this.head = head.next))
-      this.tail = null;
-    return head.el
-  }
-  peek(){
-    return this.head && this.head.el;
-  }
-  // push to tail
-  push(el){
-    const node = {el, next: null};
-    if (this.tail) this.tail.next = node;
-    else this.head = node;
-    this.tail = node;
-  }
-}
+const { Queue } = require("./queue");
 
 // chooses which animals are going to be handed out next
 class AnimalShelterScheduler {
@@ -70,4 +46,4 @@ class AnimalShelterScheduler {
   }
 }
 
-module.exports = { AnimalShelterScheduler };
+module.exports = { AnimalShelterScheduler, Queue };

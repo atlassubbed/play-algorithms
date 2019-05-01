@@ -10,6 +10,7 @@
 // this solution ends up walking the entire tree, might be a way to stop walking 
 // once the LCA is found
 const lowestCommonAncestor = (rootNode, n1, n2) => {
+  // could short circuit if !n1 or !n2 or !both
   let node = false;
   // bit vector 000000000..000xx to avoid creating array junk
   const getVec = n => {
